@@ -20,6 +20,12 @@ class GameCollectionViewController: UICollectionViewController {
     
     private var modeMarquer = false
     
+    private var tempsEcoule = 0.0
+    
+    private var timer = NSTimer()
+    
+    internal var accueilTableViewController = AccueilTableViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,7 +63,14 @@ class GameCollectionViewController: UICollectionViewController {
         
         self.setAllMines()
         
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target:self, selector:#selector(self.time), userInfo:nil, repeats:true)
+        
         super.viewDidAppear(animated)
+    }
+    
+    @objc private func time()
+    {
+        self.tempsEcoule += 0.1
     }
     
     @objc private func buttonMarquerActionListener()
@@ -196,6 +209,8 @@ class GameCollectionViewController: UICollectionViewController {
         
         if (cell.isMinePresente())
         {
+            self.timer.invalidate()
+            
             cell.imageView.image = UIImage(named:NSLocalizedString("ICON_EXPLOSION", comment:""))
             cell.imageView.hidden = false
             
@@ -209,9 +224,14 @@ class GameCollectionViewController: UICollectionViewController {
         }
         else if (self.allCellWithoutMineAreDiscovered())
         {
-            let alertController = UIAlertController(title:"Victoire", message:"Vous avez réussi !", preferredStyle:.Alert)
+            self.timer.invalidate()
             
-            let alertAction = UIAlertAction(title:"OK", style:.Default) { (_) in self.navigationController?.popViewControllerAnimated(true) }
+            let alertController = UIAlertController(title:"Victoire", message:"Vous avez réussi ! Vous avez déminé en " + String(self.tempsEcoule) + "s.", preferredStyle:.Alert)
+            
+            let alertAction = UIAlertAction(title:"OK", style:.Default) { (_) in
+                self.accueilTableViewController.gameSucceed(String(self.longueur) + "x" + String(self.largeur) + "_" + String(self.nombreDeMines), score:self.tempsEcoule)
+                self.navigationController?.popViewControllerAnimated(true)
+            }
             
             alertController.addAction(alertAction)
             
