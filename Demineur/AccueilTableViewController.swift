@@ -69,7 +69,7 @@ class AccueilTableViewController: UITableViewController {
         
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target:nil, action:nil)
         
-        self.navigationController?.toolbar.setItems([scoreButton, flexibleSpace, playButton], animated:true)
+        self.navigationController?.toolbar.setItems([flexibleSpace, scoreButton, flexibleSpace, playButton, flexibleSpace], animated:true)
         
         super.viewDidAppear(animated)
     }
@@ -79,6 +79,12 @@ class AccueilTableViewController: UITableViewController {
         if (self.sauvegarde.integerForKey("numberOfScoresFor" + identifier) < 10)
         {
             self.sauvegarde.setInteger(self.sauvegarde.integerForKey("numberOfScoresFor" + identifier) + 1, forKey:"numberOfScoresFor" + identifier)
+        }
+        if (self.sauvegarde.integerForKey("numberOfScoresFor" + identifier) == 1)
+        {
+            self.sauvegarde.setDouble(score, forKey:"scoreN°0For" + identifier)
+            self.sauvegarde.synchronize()
+            return
         }
         
         var i = 0

@@ -19,6 +19,8 @@
 		E8094EA21D26661600D4857A /* GameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8094EA11D26661600D4857A /* GameCollectionViewController.swift */; };
 		E8094EA41D2666DA00D4857A /* CollectionViewCellWithLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8094EA31D2666DA00D4857A /* CollectionViewCellWithLabel.swift */; };
 		E87AEBA31D26E092002A325E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E87AEBA21D26E092002A325E /* Localizable.strings */; };
+		E893B2411D3BE8310059D0E5 /* ScoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E893B23F1D3BE8310059D0E5 /* ScoreTableViewController.swift */; };
+		E893B2421D3BE8310059D0E5 /* TableViewCellWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E893B2401D3BE8310059D0E5 /* TableViewCellWithImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		E8094EA11D26661600D4857A /* GameCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewController.swift; sourceTree = "<group>"; };
 		E8094EA31D2666DA00D4857A /* CollectionViewCellWithLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellWithLabel.swift; sourceTree = "<group>"; };
 		E87AEBA21D26E092002A325E /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		E893B23F1D3BE8310059D0E5 /* ScoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTableViewController.swift; sourceTree = "<group>"; };
+		E893B2401D3BE8310059D0E5 /* TableViewCellWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellWithImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				E8094E6A1D26600200D4857A /* AppDelegate.swift */,
 				E8094E9B1D26608B00D4857A /* AccueilTableViewController.swift */,
 				E8094EA11D26661600D4857A /* GameCollectionViewController.swift */,
+				E893B23F1D3BE8310059D0E5 /* ScoreTableViewController.swift */,
+				E893B2401D3BE8310059D0E5 /* TableViewCellWithImage.swift */,
 				E8094E9F1D26615C00D4857A /* TableViewCellWithStepper.swift */,
 				E8094EA31D2666DA00D4857A /* CollectionViewCellWithLabel.swift */,
 				E87AEBA21D26E092002A325E /* Localizable.strings */,
@@ -208,6 +214,7 @@
 				TargetAttributes = {
 					E8094E661D26600200D4857A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 774FGZN5LT;
 					};
 					E8094E7D1D26600200D4857A = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -273,6 +280,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8094E9C1D26608B00D4857A /* AccueilTableViewController.swift in Sources */,
+				E893B2421D3BE8310059D0E5 /* TableViewCellWithImage.swift in Sources */,
+				E893B2411D3BE8310059D0E5 /* ScoreTableViewController.swift in Sources */,
 				E8094E731D26600200D4857A /* Demineur.xcdatamodeld in Sources */,
 				E8094E6B1D26600200D4857A /* AppDelegate.swift in Sources */,
 				E8094EA21D26661600D4857A /* GameCollectionViewController.swift in Sources */,
@@ -421,10 +430,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Demineur/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasNeyraut.iOS.Demineur;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -432,10 +444,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Demineur/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ThomasNeyraut.iOS.Demineur;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

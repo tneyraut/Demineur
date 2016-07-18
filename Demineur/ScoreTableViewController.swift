@@ -19,7 +19,7 @@ class ScoreTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Score pour un terrain " + self.dimension + " et " + self.nombreDeMines + "mines"
+        self.title = "Scores : terrain " + self.dimension + " et " + self.nombreDeMines + " mines"
         
         self.tableView.registerClass(TableViewCellWithImage.classForCoder(), forCellReuseIdentifier:"cell")
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier:"cell1")
@@ -67,6 +67,8 @@ class ScoreTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath)
             
             cell.textLabel?.text = "Aucun score enregistré"
+            
+            cell.textLabel?.textAlignment = .Center
             
             return cell
         }
